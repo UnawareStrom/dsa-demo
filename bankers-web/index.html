@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banker's Algorithm Visualizer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1>Banker's Algorithm</h1>
+            <p>Interactive State Space Tree Explorer</p>
+        </header>
+
+        <main class="glass-panel">
+            <div class="input-section">
+                <h2>Configuration</h2>
+                
+                <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 0.5rem; font-style: italic;">
+                    * The number of processes and resources will be automatically detected based on the Allocation Matrix.
+                </p>
+
+                <div class="input-group">
+                    <label for="allocation">Allocation Matrix (Space-separated rows)</label>
+                    <textarea id="allocation" rows="4">0 1 0
+2 0 0
+3 0 2</textarea>
+                </div>
+
+                <div class="input-group">
+                    <label for="max">Max Matrix (Space-separated rows)</label>
+                    <textarea id="max" rows="4">7 5 3
+3 2 2
+9 0 2</textarea>
+                </div>
+
+                <div class="input-group">
+                    <label for="available">Available Resources (Space-separated)</label>
+                    <input type="text" id="available" value="3 3 2">
+                </div>
+
+                <button id="calculateBtn" class="primary-btn">Calculate Safe Sequences</button>
+            </div>
+
+            <div class="output-section">
+                <h2>Execution Terminal</h2>
+                <div id="terminal" class="terminal-window">
+                    <pre id="outputContent">Awaiting configuration...</pre>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
